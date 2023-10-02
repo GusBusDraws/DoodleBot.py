@@ -80,7 +80,8 @@ async def prompt(ctx, *args):
         await ctx.send(bot.get_help())
     else:
         bot.last_arg_tuple = args
-        response = f"Here's your prompt:\n{bot.get_prompt(args)}"
+        result = bot.get_prompt(args)
+        response = f"Here's your prompt:\n{result}"
         print(f'{ctx.author.name}: ', ctx.message.content)
         print(f'{args=}')
         print(f'{bot.user}:', response)
