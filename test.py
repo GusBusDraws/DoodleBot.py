@@ -60,10 +60,50 @@ def end_punc(self):
     prompt_list = self.check_grammar(prompt_list)
     prompt = ' '.join(prompt_list)
     print(prompt)
-    # result = bot.get_prompt(args)
-    # print(result)
+
+def quote_punc(self):
+    print()
+    print('quote_punc:')
+    print('-----------')
+    msg = r'!prompt my pet %animal works as a "%job."'
+    print(msg)
+    args = msg.split(' ')[1:]
+    prompt_list = []
+    for arg in args:
+        if '%' in arg:
+            # Typically keyword will be directly after "%"
+            if arg[1:] in self.valid_keys:
+                print(f'{arg[1:]=}')
+                replaced = self.get_random_entry(arg[1:])
+                print(f'{replaced=}')
+                prompt_list.append(replaced)
+            else:
+                print(f'{arg=}')
+                found = False
+                i = 0
+                while not found and i <= len(self.valid_keys):
+                    key = self.valid_keys[i]
+                    if key in arg:
+                        start = arg.find('%')
+                        sub = arg[start+1 : len(key)+start+1]
+                        print(f'{sub=}')
+                        replaced = self.get_random_entry(sub)
+                        print(f'{replaced=}')
+                        full = arg[:start] + replaced + arg[len(key)+start+1:]
+                        print(f'{full=}')
+                        prompt_list.append(full)
+                        found = True
+                    i += 1
+                if not found:
+                    print(f'{arg} not replaced.')
+        else:
+            prompt_list.append(arg)
+    prompt_list = self.check_grammar(prompt_list)
+    prompt = ' '.join(prompt_list)
+    print(prompt)
+
 
 if __name__ == '__main__':
     bot = DoodleBot()
-    end_punc(bot)
+    quote_punc(bot)
 
