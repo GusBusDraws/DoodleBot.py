@@ -24,7 +24,7 @@ def end_punc(self: DoodleBot):
     print()
     print('end_punc:')
     print('---------')
-    msg = r'!prompt a big %reptile %sci-fi-class eats a magical %food.'
+    msg = r'!prompt a %adjective %reptile %sci-fi-class eats a magical %food.'
     print(msg)
     args = msg.split(' ')[1:]
     prompt = self.get_prompt(args)
