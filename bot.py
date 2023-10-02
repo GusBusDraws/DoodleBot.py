@@ -21,6 +21,7 @@ class DoodleBot(commands.Bot):
             self.df = pd.read_csv(CSV_PATH)
         else:
             raise ValueError('CSV not found')
+        self.valid_keys = self.df.columns.values
         self.last_arg_tuple = None
 
     def get_help(self):
@@ -31,12 +32,31 @@ class DoodleBot(commands.Bot):
         )
         return help_msg
 
-    def get_prompt(self, arg_tuple):
-        prompt_list = [
-            self.get_random_entry(arg[1:])
-            if arg.startswith('%') and arg[1:] in self.df.columns.values
-            else arg for arg in arg_tuple
-        ]
+    def get_prompt(self, args):
+        prompt_list = []
+        for arg in args:
+            if '%' in arg:
+                # Typically keyword will be directly after "%"
+                if arg[1:] in self.valid_keys:
+                    replaced = self.get_random_entry(arg[1:])
+                    prompt_list.append(replaced)
+                else:
+                    found = False
+                    i = 0
+                    while not found and i <= len(self.valid_keys):
+                        key = self.valid_keys[i]
+                        if key in arg:
+                            start = arg.find('%')
+                            sub = arg[start+1 : len(key)+start+1]
+                            replaced = self.get_random_entry(sub)
+                            full = arg[:start] + replaced + arg[len(key)+start+1:]
+                            prompt_list.append(full)
+                            found = True
+                        i += 1
+                    if not found:
+                        print(f'{arg} not replaced.')
+            else:
+                prompt_list.append(arg)
         prompt_list = self.check_grammar(prompt_list)
         prompt = ' '.join(prompt_list)
         return prompt
@@ -63,7 +83,7 @@ class DoodleBot(commands.Bot):
                     # Replace the item at this position in prompt_list (word)
                     # with 'a' instead of 'an'
                     prompt_list[i] = 'a'
-        prompt_list[0] = word.capitalize()
+        prompt_list[0] = prompt_list[0].capitalize()
         return prompt_list
 
 bot = DoodleBot()
