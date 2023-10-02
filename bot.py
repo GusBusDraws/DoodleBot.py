@@ -63,8 +63,7 @@ class DoodleBot(commands.Bot):
                     # Replace the item at this position in prompt_list (word)
                     # with 'a' instead of 'an'
                     prompt_list[i] = 'a'
-            if i == 0:
-                prompt_list[i] = word.capitalize()
+        prompt_list[0] = word.capitalize()
         return prompt_list
 
 bot = DoodleBot()
