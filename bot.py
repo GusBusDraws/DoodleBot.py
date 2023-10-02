@@ -26,8 +26,8 @@ class DoodleBot(commands.Bot):
 
     def get_help(self):
         help_msg = (
-            'Type a message after "!prompt" that includes one of the'
-            ' following keywords marked with a leading "%":\n'
+            'Send a message beginning with "!prompt" that includes at least one'
+            ' of the following keywords marked with a leading "%":\n'
             f"{', '.join(self.df.columns)}"
         )
         return help_msg
