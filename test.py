@@ -1,4 +1,7 @@
 from bot import DoodleBot
+import json
+import numpy as np
+import pandas as pd
 
 def test1():
     bot = DoodleBot()
@@ -40,9 +43,39 @@ def quote_punc(self):
     prompt = self.get_prompt(args)
     print('-->', prompt)
 
+def build_json(self: DoodleBot):
+    print()
+    col_dict = self.df.to_dict(orient='list')
+    col_dict_no_nan = {}
+    for keyword, kw_list in col_dict.items():
+        col_dict_no_nan[keyword] = []
+        for kw in kw_list:
+            if not pd.isnull(kw):
+                col_dict_no_nan[keyword].append(kw)
+    with open('keywords.json', 'w') as f:
+        json.dump(col_dict_no_nan, f, indent=2, skipkeys=False)
+    with open('keywords.json', 'r') as f:
+        lines = f.readlines()
+    # with open('keywords.json', 'w') as f:
+    #     f.truncate()
+    #     for line in lines:
+    #         if 'NaN' not in line:
+    #             f.write(line)
+    print('JSON updated.')
+
+def load_json():
+    print()
+    # df = pd.read_json('keywords.json')
+    # print(f'{df.columns=}')
+    # print(df)
+    with open('keywords.json', 'r') as f:
+        kw = json.load(f)
+    print(kw)
 
 if __name__ == '__main__':
     bot = DoodleBot()
     end_punc(bot)
     quote_punc(bot)
+    build_json(bot)
+    load_json()
 
