@@ -1,4 +1,7 @@
 from bot import DoodleBot
+import json
+import numpy as np
+import pandas as pd
 
 def test1():
     bot = DoodleBot()
@@ -12,12 +15,67 @@ def test1():
         print('arg in df.columns: ', arg[1:] in bot.df.columns)
 
 def test2():
+    print()
+    print('test2')
     bot = DoodleBot()
     test = '!prompt %emotion %invertebrate holding a %sci-fi-item'
     print(test)
     args = test.split(' ')[1:]
     print(bot.get_prompt(args))
 
+def end_punc(self: DoodleBot):
+    print()
+    print('end_punc:')
+    print('---------')
+    msg = r'!prompt a %adjective %reptile %sci-fi-class eats a magical %food.'
+    print(msg)
+    args = msg.split(' ')[1:]
+    prompt = self.get_prompt(args)
+    print('-->', prompt)
+
+def quote_punc(self):
+    print()
+    print('quote_punc:')
+    print('-----------')
+    msg = r'!prompt my pet %animal works as a "%job."'
+    print(msg)
+    args = msg.split(' ')[1:]
+    prompt = self.get_prompt(args)
+    print('-->', prompt)
+
+def build_json(self: DoodleBot):
+    print()
+    col_dict = self.df.to_dict(orient='list')
+    col_dict_no_nan = {}
+    for keyword, kw_list in col_dict.items():
+        col_dict_no_nan[keyword] = []
+        for kw in kw_list:
+            if not pd.isnull(kw):
+                col_dict_no_nan[keyword].append(kw)
+    with open('keywords.json', 'w') as f:
+        json.dump(col_dict_no_nan, f, indent=2, skipkeys=False)
+    with open('keywords.json', 'r') as f:
+        lines = f.readlines()
+    # with open('keywords.json', 'w') as f:
+    #     f.truncate()
+    #     for line in lines:
+    #         if 'NaN' not in line:
+    #             f.write(line)
+    print('JSON updated.')
+
+def load_json():
+    print()
+    # df = pd.read_json('keywords.json')
+    # print(f'{df.columns=}')
+    # print(df)
+    with open('keywords.json', 'r') as f:
+        kw = json.load(f)
+    print(kw)
 
 if __name__ == '__main__':
-    test2()
+    bot = DoodleBot()
+    end_punc(bot)
+    quote_punc(bot)
+    build_json(bot)
+    load_json()
+
