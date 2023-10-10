@@ -65,12 +65,13 @@ def build_json(self: DoodleBot):
 
 def load_json():
     print()
-    # df = pd.read_json('keywords.json')
-    # print(f'{df.columns=}')
-    # print(df)
     with open('keywords.json', 'r') as f:
-        kw = json.load(f)
-    print(kw)
+        kw_dict = json.load(f)
+    df = pd.DataFrame.from_dict(kw_dict, orient='index')
+    df = df.transpose()
+    print(df)
+    print(df['animal'][8])
+    print(pd.isnull(df['animal'][8]))
 
 if __name__ == '__main__':
     bot = DoodleBot()
