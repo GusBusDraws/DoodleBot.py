@@ -10,7 +10,7 @@ intents = discord.Intents.default()
 intents.message_content = True
 
 
-CSV_PATH = ('what-to-draw-2021-09-14-1953.csv')
+CSV_PATH = ('keywords.csv')
 
 class DoodleBot(commands.Bot):
 
