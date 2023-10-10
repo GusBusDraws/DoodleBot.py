@@ -1,0 +1,27 @@
+animal,amphibian,bird,bug,crustacean,fish,invertebrate,mammal,reptile,fantasy-creature,fantasy-class,fantasy-item,sci-fi-class,sci-fi-creature,sci-fi-item,adjective,emotion,inanimate-object,food,job,accessory,item,material,color,body-part,active-ing-verb,passive-ing-verb,location,fantasy-location,sci-fi-location,irl-location,cosmic-location
+amphibian,frog,flamingo,ant,crab,shark,octopus,cat,lizard,goblin,wizard,magic book,pilot,alien,ray gun,fuzzy,happy,toaster,a hot dog,chef,cloak,chef knife,gold,red,arm,fighting,sleeping,fantasy-location,a cave,a solar farm,an airport,the Sun
+bird,newt,parrot,house fly,lobster,pufferfish,sea cucumber,dog,chameleon,gnome,knight,wand,engineer,sandworm,tractor beam,slimy,content,car,a pb&j sandwich,artist,crown,yo-yo,ectoplasm,orange,leg,loving,sitting,sci-fi-location,a volcano,a mining colony,a Mexican restaurant,Mercury
+bug,salamander,cockatoo,caterpillar,shrimp,clownfish,starfish,tiger,snake,elf,sorcerer,staff,bounty hunter,robot,bubble helmet,wet,confused,refrigerator,a sandwich,mechanic,bath robe,kazoo,chocolate,yellow,body,eating,walking,irl-location,Middle Earth,an asteroid min,New York City,Venus
+crustacean,toad,eagle,slug,crawdad,swordfish,anenome,lion,turtle,orc,necromancer,sword,astronaut,android,space suit,hot,sad,tractor,a potato,bus driver,backpack,pocket watch,birthday cake,green,hand,watching,learning,cosmis-location,Prehistoric Earth,a moon base,Tokyo,Earth
+fish,tadpole,penguin,snail,mantis shrimp,sunfish,squid,hamster,snapping turtle,ent,barkeep,crown,explorer,zombie,UFO,cold,mad,cardboard box,a croissant,memelord,satchel,pocket knife,metal,blue,finger,contemplating,floating,,Willy Wonka's Chocolate Factory,a space station,London,the Moon
+invertebrate,axolotl,puffin,spider,fiddler crab,trout,cuttlefish,seal,sea turtle,troll,witch,sceptor,botanist,kaiju,oxygen mask,giant,angry,microwave,pizza,zookeeper,pouch,bird cage,meat,purple,toe,holding,leaning,,Ancient Rome,the future,Stonehenge,Mars
+mammal,red eyed tree frog,robin,stag beetle,horseshoe crab,tuna,jellyfish,monkey,rattlesnake,fairy,mage,magic book,medic,cyborg,gas mask,tiny,thoughtful,brick,french fries,gardener,zipper pocket,vegetable peeler,plant,turquoise,foot,teaching,thinking,,Ancient Greece,a foreign asteroid belt,Machu Pichu,the asteroid belt
+reptile,bullfrog,turkey,peacock spider,krill,salmon,clam,gorilla,crocodile,mimic,warlock,hood,doctor,blob alien,jet pack,sick,sleepy,book,a cheeseburger,accountant,belt buckle,cheese grater,dried leaves,silver,eye,,,,the Shire,a foreign moon,the Colosseum,Saturn
+,poison dart frog,vulture,dung beetle,sea monkey,goldfish,sea urchin,whale,alligator,lizardfolk,bard,oversized pack,space marine,mutant,hover board,sharp,hungry,skull,tater tots,lawyer,trucker hat,shampoo bottle,bones,gold,nose,,,,Hogwarts,a distant star,Paris,Jupiter
+,,raven,grasshopper,isopod,koi,mussel,leopard,anaconda,dragon,shopkeeper,knapsack,scientist,humanoid alien,unobtanium,unwieldy,lonely,bookshelf,ice cream,cashier,straw hat,bar of soap,bone,jet black,mouth,,,,Wonderland,alien ruins,"Washington, DC",Uranus
+,,,scorpion,barnacle,electric eel,scallop,pangolin,boa constrictor,slime,druid,quiver and arrows,spy,tentacle alien,visor,shimmery,sick,mattress,a chocolate bar,cheese monger,denim jacket,ukulele,poop,invisible,butt,,,,Wakanda,the surface of the sun,a jungle,Neptune
+,,,praying mantis,,eel,clam,dolphin,monitor lizard,ghost,artificer,bow and arrows,exobiologist,reptilian alien,drone,pointy,uncomfortable,ramp,chocolate cake,warlord,leather jacket,tennis shoe,ice,yellowish,head,,,,Mordor,a desolate plane,a desert,Pluto
+,,,earthworm,,moray eel,,manatee,iguanna,dwarf,barbarian,quarter staff,geologist,avian alien,ammo pouches,healthy,comfortable,staircase,birthday cake,general,puka shell necklace,,snow,,brain,,,,ancient ruins,a city planet,an abandoned mineshaft,Alpha Centauri
+,,,mosquito,,,,kangaroo,gila monster,unicorn,monk,club,space pirate,grey alien,orb,buff,,slide,a taco,soilder,cowboy hat,tennis shoe,water,,face,,,,a castle,a black hole,Las Vegas,outside the Milky Way
+,,,butterfly,,,,hedgehog,leopard gecko,gryphon,technomancer,crossbow,cargo hauler,goo,nuclear fuel pellet,lean,,ladder,a quesadilla,dealer,puffy jacket,cup,cat hair,,knee ,,,,a mountain top,the past,San Francisco,the galactic center
+,,,flea,,,,armadillo,horned toad,cyclops,rogue,crystal ball,crewmember,artificial intelligence,radiothermal electric generator,plus sized,,door,a burrito,fraudster,hoodie,pen,bird poop,,elbow,,,,,,,
+,,,tick,,,,horse,ball python,centaur,pirate,knife,,,,ghastly,,canvas,a bowl of spaghetti,assasin,bomber jacket,brush,frosting,,tummy,,,,,,,
+,,,assasin bug,,,,bear,tortoise,minotaur,,axe,,,,,,easle,a leg of mutton,spy,,paper,ice cream,,belly,,,,,,,
+,,,millipede,,,,kitten,,sphynx,,hammer,,,,,,item,spinach,detective,,bomb,platinum ,,stomach,,,,,,,
+,,,centipede,,,,puppy,,angel,,spear,,,,,,,a fried egg,thug,,plate,slime,,heart,,,,,,,
+,,,,,,,,,demon,,shortsword,,,,,,,mashed potatoes,backup dancer,,astrological calendar,scrambled eggs,,cranium,,,,,,,
+,,,,,,,,,manticore,,longsword,,,,,,,water,sommelier,,map,glass,,skull,,,,,,,
+,,,,,,,,,gremlin,,greatsword,,,,,,,salt,,,barometer,crystal,,,,,,,,,
+,,,,,,,,,kobold,,mace,,,,,,,,,,tea set,mashed potatoes,,,,,,,,,
+,,,,,,,,,biblically accurate angel,,shield,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,yeti,,idol,,,,,,,,,,,,,,,,,,,,
