@@ -1,30 +1,18 @@
-import discord
-from discord.ext import commands
-from dotenv import load_dotenv
 import json
-from pathlib import Path
 import pandas as pd
 import random
 
 
-INTENTS = discord.Intents.default()
-INTENTS.message_content = True
-KW_PATH = Path('keywords.json')
-
-class DoodleBot(commands.Bot):
-
-    def __init__(self):
-        super().__init__(command_prefix='!', intents=INTENTS)
+class DoodleBot():
+    def __init__(self, kw_path):
         # Check that CSV_PATH exists
-        if KW_PATH.exists():
-            if KW_PATH.name.endswith('.csv'):
-                self.df = pd.read_csv(KW_PATH)
-            else:
-                with open('keywords.json', 'r') as f:
-                    kw_dict = json.load(f)
-                # Load DF sideways so missing rows read as missing cols
-                self.df = pd.DataFrame.from_dict(kw_dict, orient='index')
-                self.df = self.df.transpose()
+        if kw_path.exists():
+            # Load JSON
+            with open(kw_path, 'r') as f:
+                kw_dict = json.load(f)
+            # Load DF sideways so missing rows read as missing cols
+            self.df = pd.DataFrame.from_dict(kw_dict, orient='index')
+            self.df = self.df.transpose()
         else:
             raise ValueError('Keywords not found.')
         self.valid_keys = self.df.columns.values
@@ -91,37 +79,3 @@ class DoodleBot(commands.Bot):
                     prompt_list[i] = 'a'
         prompt_list[0] = prompt_list[0].capitalize()
         return prompt_list
-
-bot = DoodleBot()
-
-@bot.event
-async def on_ready():
-    print(f'{bot.user} has connected to Discord!')
-
-@bot.command()
-async def prompt(ctx, *args):
-    # If no arguments are passed after the command
-    if len(args) == 0:
-        await ctx.send(bot.get_help())
-    else:
-        bot.last_arg_tuple = args
-        result = bot.get_prompt(args)
-        response = f"Here's your prompt:\n{result}"
-        print(f'{ctx.author.name}: ', ctx.message.content)
-        print(f'{args=}')
-        print(f'{bot.user}:', response)
-        await ctx.channel.send(response)
-
-@bot.command()
-async def reroll(ctx):
-    if bot.last_arg_tuple is None:
-        await ctx.send('Try calling !prompt first!')
-    else:
-        prompt = bot.get_prompt(bot.last_arg_tuple)
-        await ctx.send(prompt)
-
-
-if __name__ == '__main__':
-    load_dotenv()
-    token = os.getenv('DISCORD_TOKEN')
-    bot.run(token)
