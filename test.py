@@ -1,4 +1,4 @@
-from bot import DoodleBot
+from doodlebot import DoodleBot
 import json
 import numpy as np
 import pandas as pd
@@ -85,12 +85,20 @@ def order_json():
         json.dump(kw_dict, f, indent=2, skipkeys=False)
     print(list(kw_dict.values())[0])
 
+def reddit_args(msg: str):
+    args = msg.split(' ')[1:]
+    print(args)
+    print(type(args))
+    print(*args)
+    print(len(args))
+
 
 if __name__ == '__main__':
-    bot = DoodleBot()
-    end_punc(bot)
-    quote_punc(bot)
+    # bot = DoodleBot()
+    # end_punc(bot)
+    # quote_punc(bot)
     # build_json(bot)
-    df = load_json()
-    order_json()
+    # df = load_json()
+    # order_json()
+    reddit_args('!prompt')
 
