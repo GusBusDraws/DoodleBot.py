@@ -1,10 +1,31 @@
-# doodle-bot
-DoodleBot is a Discord bot for generating drawing prompts!
+# DoodleBot
+DoodleBot is a bot for generating drawing prompts! You can interact with
+this bot in the [Doodle Crew! Discord server](https://discord.gg/kttkrUsk3Z)
+or on [r/DoodleBot](https://reddit.com/r/DoodleBot).
 
-## Commands
-- `!help`
+## Usage
+To use this bot on either platform, send a message or post a comment
+beginning with "!prompt" which includes at least one of the keywords listed
+in [keywords.json](keywords.json) with a leading "%". These keywords include:
+
+- animal
+- creature
+- class
+- food
+- item
+- material
+
+Many of the keywords (like "class", "creature", and "item") can also be modified with "fantasy-", "scifi-",
+or "irl-".
+
+For a full list of keywords that can be used, you can pass "!prompt" without anything after it.
+
+## Discord Commands
 - `!prompt`
 - `!reroll`
+
+## Reddit Commands
+- `!prompt`
 
 ## Change log
 ### 2023/10/11
