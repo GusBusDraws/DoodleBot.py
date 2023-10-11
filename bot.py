@@ -1,26 +1,32 @@
 import discord
 from discord.ext import commands
 from dotenv import load_dotenv
-import os
+import json
+from pathlib import Path
 import pandas as pd
 import random
 
 
-intents = discord.Intents.default()
-intents.message_content = True
-
-
-CSV_PATH = ('keywords.csv')
+INTENTS = discord.Intents.default()
+INTENTS.message_content = True
+KW_PATH = Path('keywords.json')
 
 class DoodleBot(commands.Bot):
 
     def __init__(self):
-        super().__init__(command_prefix='!', intents=intents)
+        super().__init__(command_prefix='!', intents=INTENTS)
         # Check that CSV_PATH exists
-        if os.path.exists(CSV_PATH):
-            self.df = pd.read_csv(CSV_PATH)
+        if KW_PATH.exists():
+            if KW_PATH.name.endswith('.csv'):
+                self.df = pd.read_csv(KW_PATH)
+            else:
+                with open('keywords.json', 'r') as f:
+                    kw_dict = json.load(f)
+                # Load DF sideways so missing rows read as missing cols
+                self.df = pd.DataFrame.from_dict(kw_dict, orient='index')
+                self.df = self.df.transpose()
         else:
-            raise ValueError('CSV not found')
+            raise ValueError('Keywords not found.')
         self.valid_keys = self.df.columns.values
         self.last_arg_tuple = None
 
