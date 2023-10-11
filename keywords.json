@@ -177,6 +177,7 @@
     "monk",
     "necromancer",
     "pirate",
+    "psychic",
     "rogue",
     "shopkeeper",
     "sorcerer",
@@ -212,6 +213,20 @@
     "staff",
     "sword",
     "wand"
+  ],
+  "field-of-study": [
+    "astronomy",
+    "astrophysics",
+    "biology",
+    "geology",
+    "law",
+    "materials science",
+    "mathematics",
+    "medicine",
+    "metallurgy",
+    "physics",
+    "sociology",
+    "zoology"
   ],
   "scifi-class": [
     "astronaut",
@@ -414,6 +429,7 @@
     "cheese grater",
     "chef knife",
     "cup",
+    "duck whistle",
     "kazoo",
     "map",
     "paper",
@@ -424,7 +440,7 @@
     "shampoo bottle",
     "tea set",
     "tennis shoe",
-    "tennis shoe",
+    "train whistle",
     "ukulele",
     "vegetable peeler",
     "yo-yo"
