@@ -8,6 +8,9 @@ DoodleBot is a Discord bot for generating drawing prompts!
 
 ## Change log
 ### 2023/10/10
+- Change "sci-fi" to "scifi"
+- Split food into "food-items" and "food-materials"
+- Update "food", "items", and "materials"
 - Load keywords from JSON instead of CSV
 - Update keyword bank
 - Add location keywords
