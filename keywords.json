@@ -323,22 +323,15 @@
     "tractor"
   ],
   "food": [
-    "a bowl of spaghetti",
-    "a burrito",
-    "a cheeseburger",
-    "a chocolate bar",
-    "a croissant",
-    "a fried egg",
-    "a hot dog",
-    "a leg of mutton",
-    "a pb&j sandwich",
-    "a potato",
-    "a quesadilla",
-    "a sandwich",
-    "a taco",
+    "food-item",
+    "food-material"
+  ],
+  "food-material": [
     "birthday cake",
+    "chocolate",
     "chocolate cake",
     "french fries",
+    "frosting",
     "ice cream",
     "mashed potatoes",
     "pizza",
@@ -346,6 +339,21 @@
     "spinach",
     "tater tots",
     "water"
+  ],
+  "food-item": [
+    "bowl of spaghetti",
+    "burrito",
+    "cheeseburger",
+    "chocolate bar",
+    "croissant",
+    "fried egg",
+    "hot dog",
+    "leg of mutton",
+    "pb&j sandwich",
+    "potato",
+    "quesadilla",
+    "sandwich",
+    "taco"
   ],
   "job": [
     "accountant",
@@ -391,6 +399,12 @@
     "zipper pocket"
   ],
   "item": [
+    "irl-item",
+    "fantasy-item",
+    "sci-fi-item",
+    "food-item"
+  ],
+  "irl-item": [
     "astrological calendar",
     "bar of soap",
     "barometer",
@@ -417,20 +431,15 @@
   ],
   "material": [
     "bird poop",
-    "birthday cake",
     "bone",
     "bones",
     "cat hair",
-    "chocolate",
     "crystal",
     "dried leaves",
     "ectoplasm",
-    "frosting",
     "glass",
     "gold",
     "ice",
-    "ice cream",
-    "mashed potatoes",
     "meat",
     "metal",
     "plant",
