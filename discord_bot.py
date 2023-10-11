@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 from dotenv import load_dotenv
 import json
+import os
 from pathlib import Path
 import pandas as pd
 import random
@@ -17,14 +18,12 @@ class DoodleBot(commands.Bot):
         super().__init__(command_prefix='!', intents=INTENTS)
         # Check that CSV_PATH exists
         if KW_PATH.exists():
-            if KW_PATH.name.endswith('.csv'):
-                self.df = pd.read_csv(KW_PATH)
-            else:
-                with open('keywords.json', 'r') as f:
-                    kw_dict = json.load(f)
-                # Load DF sideways so missing rows read as missing cols
-                self.df = pd.DataFrame.from_dict(kw_dict, orient='index')
-                self.df = self.df.transpose()
+            # Load JSON
+            with open(KW_PATH, 'r') as f:
+                kw_dict = json.load(f)
+            # Load DF sideways so missing rows read as missing cols
+            self.df = pd.DataFrame.from_dict(kw_dict, orient='index')
+            self.df = self.df.transpose()
         else:
             raise ValueError('Keywords not found.')
         self.valid_keys = self.df.columns.values
