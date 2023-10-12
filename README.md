@@ -29,6 +29,7 @@ For a full list of keywords that can be used, you can pass "!prompt" without any
 
 ## Change log
 ### 2023/10/11
+- Only check for "!prompt" at beginning of message
 - Add Reddit bot
 - Move core DoodleBot functionality to separate file/class
 - Add "field-of-study" to keywords
