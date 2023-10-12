@@ -23,20 +23,25 @@ if __name__ == '__main__':
     client_id = os.getenv('REDDIT_CLIENT_ID')
     client_secret = os.getenv('REDDIT_SECRET')
     password = os.getenv('REDDIT_PASSWORD')
+    user_agent = "DoodleBot v1.0 /u/DoodleBotPrompts"
+    username = "DoodleBotPrompts"
     reddit = praw.Reddit(
         client_id=client_id,
         client_secret=client_secret,
         password=password,
-        user_agent="DoodleBot v1.0 /u/DoodleBotPrompts",
-        username="DoodleBotPrompts",
+        user_agent=user_agent,
+        username=username,
     )
     subreddit = reddit.subreddit("DoodleBot")
     print('Connected to', subreddit.display_name)
     # Iterate through the comments from subreddit as new ones are coming in
     for comment in subreddit.stream.comments(skip_existing=True):
         try:
-            # Look for "!prompt" in comment
-            if "!prompt" in comment.body:
+            # Look for "!prompt" at beginning of comment
+            if (
+                comment.body.startswith("!prompt")
+                and comment.author != username
+            ):
                 print(f'{comment.author=}')
                 print(f'{comment.body=}')
                 args = comment.body.split(' ')[1:]
@@ -44,5 +49,7 @@ if __name__ == '__main__':
                 # Bot reply to the comment with "!prompt"
                 print(f'{response=}')
                 comment.reply(response)
-        except praw.exceptions.APIException: # Reddit may have rate limits, this prevents your bot from dying due to rate limits
+        # Reddit may have rate limits, this prevents bot from dying due to
+        # rate limits
+        except praw.exceptions.APIException:
             print("probably a rate limit...")
