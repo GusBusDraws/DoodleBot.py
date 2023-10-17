@@ -36,18 +36,13 @@ class DoodleBot():
                     replaced = self.get_random_entry(arg[1:])
                     prompt_list.append(replaced)
                 else:
-                    print(f'Trying to find key in "{arg}"')
                     found = False
                     i = 0
                     while not found and i <= len(self.valid_keys):
                         key = self.valid_keys[i]
-                        print(f'{key=}')
                         if key in arg:
                             start = arg.find('%')
-                            print(f'{start=}')
-                            print(f'{len(key)=}')
                             sub = arg[start+1 : len(key)+start+1]
-                            print(f'{sub=}')
                             # If a faulty substituted keyword passes through,
                             # catch the KeyError exception
                             try:
