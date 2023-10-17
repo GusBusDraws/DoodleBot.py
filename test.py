@@ -92,13 +92,25 @@ def reddit_args(msg: str):
     print(*args)
     print(len(args))
 
+def period_test(self):
+    msg = (
+        '!prompt a building of tension between a %passive-ing-verb'
+        ' %scifi-class and the %active-ing-verb %scifi-class within'
+        ' %location %scifi-location %cosmic-location.')
+    print(msg)
+    args = msg.split(' ')[1:]
+    print(args)
+    prompt = self.get_prompt(args)
+    print('-->', prompt)
+
 
 if __name__ == '__main__':
-    # bot = DoodleBot()
+    bot = DoodleBot()
     # end_punc(bot)
     # quote_punc(bot)
     # build_json(bot)
     # df = load_json()
     # order_json()
-    reddit_args('!prompt')
+    # reddit_args('!prompt')
+    period_test(bot)
 
