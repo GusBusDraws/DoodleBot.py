@@ -413,7 +413,7 @@
     "trucker hat",
     "zipper pocket"
   ],
-  "item": [
+  "any-item": [
     "irl-item",
     "fantasy-item",
     "scifi-item",
@@ -522,7 +522,7 @@
     "thinking",
     "walking"
   ],
-  "location": [
+  "any-location": [
     "cosmic-location",
     "fantasy-location",
     "irl-location",
