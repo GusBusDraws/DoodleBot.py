@@ -1,20 +1,21 @@
 import json
 import pandas as pd
+from pathlib import Path
 import random
 
 
 class DoodleBot():
-    def __init__(self, kw_path):
+    def __init__(self):
         # Check that CSV_PATH exists
-        if kw_path.exists():
-            # Load JSON
-            with open(kw_path, 'r') as f:
-                kw_dict = json.load(f)
-            # Load DF sideways so missing rows read as missing cols
-            self.df = pd.DataFrame.from_dict(kw_dict, orient='index')
-            self.df = self.df.transpose()
-        else:
+        kw_path = Path('keywords.json')
+        if not kw_path.exists():
             raise ValueError('Keywords not found.')
+        # Load JSON
+        with open(kw_path, 'r') as f:
+            kw_dict = json.load(f)
+        # Load DF sideways so missing rows read as missing cols
+        self.df = pd.DataFrame.from_dict(kw_dict, orient='index')
+        self.df = self.df.transpose()
         self.valid_keys = self.df.columns.values
         self.last_arg_tuple = None
 

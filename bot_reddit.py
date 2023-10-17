@@ -18,7 +18,7 @@ def get_prompt_reply(args):
     return response
 
 if __name__ == '__main__':
-    doodle_state = DoodleBot(Path('keywords.json'))
+    doodle_state = DoodleBot()
     load_dotenv()
     client_id = os.getenv('REDDIT_CLIENT_ID')
     client_secret = os.getenv('REDDIT_SECRET')

@@ -12,7 +12,7 @@ description = (
     ' friction when making art.')
 intents = discord.Intents.default()
 intents.message_content = True
-doodle_state = DoodleBot(Path('keywords.json'))
+doodle_state = DoodleBot()
 bot = commands.Bot(command_prefix='!', description=description, intents=intents)
 
 @bot.event
