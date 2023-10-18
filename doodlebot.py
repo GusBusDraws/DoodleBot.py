@@ -94,18 +94,19 @@ class DoodleBot():
         if len(args) < 1:
             reply = (
                 'To suggest words for the DoodleBot database, use the command'
-                ' "!suggest" followed by the keyword for which you\'d like to'
-                ' make your suggestion, then your word.'
-                ' Example: "!suggest animal penguin"'
+                ' "!suggest" followed by the category keyword, then'
+                ' your suggested word or words.'
+                ' Spaces will separate multiple suggested words.'
+                ' Example: "!suggest bird penguin"'
             )
-        if len(args) == 1:
+        elif len(args) == 1:
             keyword = args[0]
             try:
                 if keyword not in suggestions['keyword']:
                     suggestions['keyword'].append(keyword)
             except KeyError:
                 suggestions['keyword'] = [keyword]
-            reply = (f'The keyword "{keyword}" has been suggested.')
+            reply = (f'"{keyword}" suggested as keyword')
         else:
             keyword = args[0]
             words = args[1:]
@@ -118,7 +119,7 @@ class DoodleBot():
                     suggestions[keyword] = [word]
             reply = (
                 f'"{(", ").join(words)}" suggested for the keyword'
-                f' "{keyword}".')
+                f' "{keyword}"')
         with open(self.suggestions_path, 'w') as f:
             json.dump(suggestions, f, indent=2, skipkeys=False)
         return reply
