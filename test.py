@@ -93,6 +93,7 @@ def reddit_args(msg: str):
     print(len(args))
 
 def period_test(self):
+    # Note: this actually became a test for keywords that contain other keywords
     msg = (
         '!prompt a building of tension between a %passive-ing-verb'
         ' %scifi-class and the %active-ing-verb %scifi-class within'
@@ -103,6 +104,72 @@ def period_test(self):
     prompt = self.get_prompt(args)
     print('-->', prompt)
 
+def make_suggestions():
+    print()
+    suggestions = {}
+    with open('suggestions.json', 'w') as f:
+        json.dump(suggestions, f, indent=2, skipkeys=False)
+
+def load_suggestions():
+    print()
+    print('Loading suggestions.json:')
+    with open('suggestions.json', 'r') as f:
+        suggestions = json.load(f)
+    df = pd.DataFrame.from_dict(suggestions, orient='index')
+    df = df.transpose()
+    print(df)
+    return df
+
+def suggest(msg):
+    print()
+    with open('suggestions.json', 'r') as f:
+        suggestions = json.load(f)
+    print(suggestions)
+    print(msg)
+    args = msg.split(' ')[1:]
+    if len(args) < 1:
+        reply = (
+            'To suggest words for the DoodleBot database, use the command'
+            ' "!suggest" followed by the keyword for which you\'d like to'
+            ' make your suggestion, then your word.'
+            ' Example: "!suggest animal penguin"'
+        )
+    if len(args) == 1:
+        keyword = args[0]
+        try:
+            if keyword not in suggestions['keyword']:
+                suggestions['keyword'].append(keyword)
+        except KeyError:
+            suggestions['keyword'] = [keyword]
+        reply = (f'The keyword "{keyword}" has been suggested.')
+    else:
+        keyword = args[0]
+        words = args[1:]
+        for word in words:
+            try:
+                existing_words = suggestions[keyword]
+                if word not in existing_words:
+                    existing_words.append(word)
+            except KeyError:
+                suggestions[keyword] = [word]
+        reply = (f'"{(", ").join(words)}" suggested for the keyword "{keyword}".')
+    print(reply)
+    print(suggestions)
+    with open('suggestions.json', 'w') as f:
+        json.dump(suggestions, f, indent=2, skipkeys=False)
+
+def suggest_item():
+    msg = '!suggest irl-item coin'
+    suggest(msg)
+
+def suggest_kw():
+    msg = '!suggest cryptid'
+    suggest(msg)
+
+def suggest_list():
+    msg = '!suggest cryptid mothman chupacabra bigfoot'
+    suggest(msg)
+
 
 if __name__ == '__main__':
     bot = DoodleBot()
@@ -112,5 +179,10 @@ if __name__ == '__main__':
     # df = load_json()
     # order_json()
     # reddit_args('!prompt')
-    period_test(bot)
+    # period_test(bot)
+    # make_suggestions()
+    suggest_item()
+    suggest_kw()
+    suggest_list()
+    load_suggestions()
 
