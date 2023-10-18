@@ -1,8 +1,14 @@
 {
-  "irl-item": [
-  ],
+  "irl-item": [],
   "keyword": [
+    "adverb"
   ],
-  "cryptid": [
+  "cryptid": [],
+  "bird": [
+    "penguin"
+  ],
+  "adverb": [
+    "quickly",
+    "slowly"
   ]
 }
