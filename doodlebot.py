@@ -6,7 +6,6 @@ import random
 
 class DoodleBot():
     def __init__(self):
-        # Check that CSV_PATH exists
         kw_path = Path('keywords.json')
         if not kw_path.exists():
             raise ValueError('Keywords not found.')
@@ -18,6 +17,7 @@ class DoodleBot():
         self.df = self.df.transpose()
         self.valid_keys = self.df.columns.values
         self.last_arg_tuple = None
+        self.suggestions_path = Path('suggestions.json')
 
     def get_help(self):
         help_msg = (
@@ -86,3 +86,40 @@ class DoodleBot():
                     prompt_list[i] = 'a'
         prompt_list[0] = prompt_list[0].capitalize()
         return prompt_list
+
+    def suggest(self, args):
+        print()
+        with open(self.suggestions_path, 'r') as f:
+            suggestions = json.load(f)
+        if len(args) < 1:
+            reply = (
+                'To suggest words for the DoodleBot database, use the command'
+                ' "!suggest" followed by the keyword for which you\'d like to'
+                ' make your suggestion, then your word.'
+                ' Example: "!suggest animal penguin"'
+            )
+        if len(args) == 1:
+            keyword = args[0]
+            try:
+                if keyword not in suggestions['keyword']:
+                    suggestions['keyword'].append(keyword)
+            except KeyError:
+                suggestions['keyword'] = [keyword]
+            reply = (f'The keyword "{keyword}" has been suggested.')
+        else:
+            keyword = args[0]
+            words = args[1:]
+            for word in words:
+                try:
+                    existing_words = suggestions[keyword]
+                    if word not in existing_words:
+                        existing_words.append(word)
+                except KeyError:
+                    suggestions[keyword] = [word]
+            reply = (
+                f'"{(", ").join(words)}" suggested for the keyword'
+                f' "{keyword}".')
+        with open(self.suggestions_path, 'w') as f:
+            json.dump(suggestions, f, indent=2, skipkeys=False)
+        return reply
+

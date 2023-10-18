@@ -41,6 +41,14 @@ async def reroll(ctx):
         prompt = doodle_state.get_prompt(doodle_state.last_arg_tuple)
         await ctx.send(prompt)
 
+@bot.command()
+async def suggest(ctx, *args):
+    response = doodle_state.suggest(args)
+    print(f'{ctx.author.name}: ', ctx.message.content)
+    print(f'{args=}')
+    print(f'{bot.user}:', response)
+    await ctx.channel.send(response)
+
 
 if __name__ == '__main__':
     load_dotenv()
