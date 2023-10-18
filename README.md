@@ -21,13 +21,23 @@ or "irl-".
 For a full list of keywords that can be used, you can pass "!prompt" without anything after it.
 
 ## Discord Commands
+- `!list`
 - `!prompt`
 - `!reroll`
+- `!suggest`
 
 ## Reddit Commands
 - `!prompt`
 
 ## Change log
+### 2023/10/18
+- Add "!list" command to bot_discord.py for assessing keyword database
+- Add "!suggest" command to bot_discord.py for populating suggestions.json
+
+### 2023/10/16
+- Update 'item' and 'location' keywords to include 'any-' to avoid premature
+key matches
+
 ### 2023/10/11
 - Only check for "!prompt" at beginning of message
 - Add Reddit bot

@@ -12,12 +12,20 @@ description = (
     ' friction when making art.')
 intents = discord.Intents.default()
 intents.message_content = True
-doodle_state = DoodleBot(Path('keywords.json'))
+doodle_state = DoodleBot()
 bot = commands.Bot(command_prefix='!', description=description, intents=intents)
 
 @bot.event
 async def on_ready():
     print(f'{bot.user} has connected to Discord!')
+
+@bot.command()
+async def list(ctx, *args):
+    response = doodle_state.list(args)
+    print(f'{ctx.author.name}: ', ctx.message.content)
+    print(f'{args=}')
+    print(f'{bot.user}:', response)
+    await ctx.channel.send(response)
 
 @bot.command()
 async def prompt(ctx, *args):
@@ -40,6 +48,14 @@ async def reroll(ctx):
     else:
         prompt = doodle_state.get_prompt(doodle_state.last_arg_tuple)
         await ctx.send(prompt)
+
+@bot.command()
+async def suggest(ctx, *args):
+    response = doodle_state.suggest(args)
+    print(f'{ctx.author.name}: ', ctx.message.content)
+    print(f'{args=}')
+    print(f'{bot.user}:', response)
+    await ctx.channel.send(response)
 
 
 if __name__ == '__main__':
