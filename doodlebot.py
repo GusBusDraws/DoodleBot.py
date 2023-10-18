@@ -87,6 +87,22 @@ class DoodleBot():
         prompt_list[0] = prompt_list[0].capitalize()
         return prompt_list
 
+    def list(self, args):
+        if len(args) < 1:
+            reply = (
+                'To view a list of all words in a certain keyword category,'
+                ' use the command "!list" followed by the keyword of interest.'
+            )
+        else:
+            keyword = args[0]
+            try:
+                kw_list = self.df[keyword].dropna().tolist()
+                print(kw_list)
+                reply = ', '.join(kw_list)
+            except KeyError:
+                reply = f'Keyword "{keyword}" not found'
+        return reply
+
     def suggest(self, args):
         print()
         with open(self.suggestions_path, 'r') as f:

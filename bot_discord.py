@@ -20,6 +20,14 @@ async def on_ready():
     print(f'{bot.user} has connected to Discord!')
 
 @bot.command()
+async def list(ctx, *args):
+    response = doodle_state.list(args)
+    print(f'{ctx.author.name}: ', ctx.message.content)
+    print(f'{args=}')
+    print(f'{bot.user}:', response)
+    await ctx.channel.send(response)
+
+@bot.command()
 async def prompt(ctx, *args):
     # If no arguments are passed after the command
     if len(args) == 0:

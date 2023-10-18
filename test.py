@@ -170,6 +170,20 @@ def suggest_list():
     msg = '!suggest cryptid mothman chupacabra bigfoot'
     suggest(msg)
 
+def list_test(self):
+    print()
+    print('list_test:')
+    args = ['animal']
+    keyword = args[0]
+    print(f'{args=}')
+    try:
+        kw_list = self.df[keyword].dropna().tolist()
+        print(kw_list)
+        reply = ', '.join(kw_list)
+    except KeyError:
+        reply = f'Keyword "{keyword}" not found'
+    print(reply)
+
 
 if __name__ == '__main__':
     bot = DoodleBot()
@@ -181,8 +195,9 @@ if __name__ == '__main__':
     # reddit_args('!prompt')
     # period_test(bot)
     # make_suggestions()
-    suggest_item()
-    suggest_kw()
-    suggest_list()
-    load_suggestions()
+    # suggest_item()
+    # suggest_kw()
+    # suggest_list()
+    # load_suggestions()
+    list_test(bot)
 
