@@ -191,7 +191,7 @@ if __name__ == '__main__':
     # quote_punc(bot)
     # build_json(bot)
     # df = load_json()
-    # order_json()
+    order_json()
     # reddit_args('!prompt')
     # period_test(bot)
     # make_suggestions()
@@ -199,5 +199,5 @@ if __name__ == '__main__':
     # suggest_kw()
     # suggest_list()
     # load_suggestions()
-    list_test(bot)
+    # list_test(bot)
 
