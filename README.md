@@ -30,6 +30,9 @@ For a full list of keywords that can be used, you can pass "!prompt" without any
 - `!prompt`
 
 ## Change log
+### 2024/06/21
+- Fixed error when keyword not found in database
+
 ### 2023/10/18
 - Add "!list" command to bot_discord.py for assessing keyword database
 - Add "!suggest" command to bot_discord.py for populating suggestions.json
