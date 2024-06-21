@@ -38,7 +38,7 @@ class DoodleBot():
                 else:
                     found = False
                     i = 0
-                    while not found and i <= len(self.valid_keys):
+                    while not found and i < len(self.valid_keys):
                         key = self.valid_keys[i]
                         if key in arg:
                             start = arg.find('%')
@@ -56,6 +56,7 @@ class DoodleBot():
                         i += 1
                     if not found:
                         print(f'{arg} not replaced.')
+                        prompt_list.append(arg)
             else:
                 prompt_list.append(arg)
         prompt_list = self.check_grammar(prompt_list)

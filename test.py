@@ -184,6 +184,25 @@ def list_test(self):
         reply = f'Keyword "{keyword}" not found'
     print(reply)
 
+def basic(self):
+    print()
+    print('basic test:')
+    print('-----------')
+    msg = r'!prompt a %fantasy-class %animal with a %scifi-item'
+    print(msg)
+    args = msg.split(' ')[1:]
+    prompt = self.get_prompt(args)
+    print('-->', prompt)
+
+def unknown_kw(self):
+    print()
+    print('unknown kw:')
+    print('-----------')
+    msg = r'!prompt This keyword does not exist: %unknown'
+    print(msg)
+    args = msg.split(' ')[1:]
+    prompt = self.get_prompt(args)
+    print('-->', prompt)
 
 if __name__ == '__main__':
     bot = DoodleBot()
@@ -191,7 +210,7 @@ if __name__ == '__main__':
     # quote_punc(bot)
     # build_json(bot)
     # df = load_json()
-    order_json()
+    # order_json()
     # reddit_args('!prompt')
     # period_test(bot)
     # make_suggestions()
@@ -200,4 +219,6 @@ if __name__ == '__main__':
     # suggest_list()
     # load_suggestions()
     # list_test(bot)
+    unknown_kw(bot)
+    basic(bot)
 
