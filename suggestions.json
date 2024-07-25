@@ -4,7 +4,8 @@
     "ed-verb",
     "clothing",
     "leather-jacket",
-    "clothing-fedora"
+    "clothing-fedora",
+    "floral-dress"
   ],
   "cryptid": [],
   "bird": [],
@@ -141,7 +142,16 @@
     "clogs",
     "geta-shoe",
     "foot-wraps",
-    "knee-high-socks"
+    "knee-high-socks",
+    "gym-shorts",
+    "midi-dress",
+    "maxi-dress",
+    "cocktail-dress",
+    "sundress",
+    "1920s-flapper-dress",
+    "ballgown",
+    "plaid-flannel-shirt",
+    "plaid-flannel-shirt-with-the-sleeves-ripped-off"
   ],
   "accessory": [
     "clown-wig",
@@ -151,7 +161,9 @@
     "purse",
     "backpacking-backpack",
     "hiking-poles",
-    "knight-helmet"
+    "knight-helmet",
+    "ascot-tie",
+    "bow-tie"
   ],
   "reptile": [
     "bearded-dragon"
