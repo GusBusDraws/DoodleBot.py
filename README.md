@@ -30,18 +30,17 @@ For a full list of keywords that can be used, you can pass "!prompt" without any
 - `!prompt`
 
 ## Change log
-### 2024/06/21
+### 2024-07-25
+- Add keywords: clothing, headwear, upper-torso-clothing, lower-torso-clothing, footwear
+### 2024-06-21
 - Fixed error when keyword not found in database
-
-### 2023/10/18
+### 2023-10-18
 - Add "!list" command to bot_discord.py for assessing keyword database
 - Add "!suggest" command to bot_discord.py for populating suggestions.json
-
-### 2023/10/16
+### 2023-10-16
 - Update 'item' and 'location' keywords to include 'any-' to avoid premature
 key matches
-
-### 2023/10/11
+### 2023-10-11
 - Only check for "!prompt" at beginning of message
 - Add Reddit bot
 - Move core DoodleBot functionality to separate file/class
@@ -49,8 +48,7 @@ key matches
 - Change "sci-fi" to "scifi"
 - Split food into "food-items" and "food-materials"
 - Update "food", "items", and "materials"
-
-### 2023/10/10
+### 2023-10-10
 - Load keywords from JSON instead of CSV
 - Update keyword bank
 - Add location keywords

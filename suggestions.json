@@ -1,31 +1,20 @@
 {
-  "irl-item": [
-  ],
-  "keyword": [
-  ],
+  "irl-item": [],
+  "keyword": [],
   "cryptid": [],
-  "bird": [
-  ],
-  "adverb": [
-  ],
-  "scifi-creature": [
-  ],
-  "emotion": [
-  ],
-  "bug": [
-  ],
-  "mammal": [
-  ],
-  "adjective": [
-  ],
-  "fantasy-location": [
-  ],
-  "material": [
-  ],
-  "fantasy-item": [
-  ],
-  "fantasy-items": [
-  ],
-  "inanimate-object": [
-  ]
+  "bird": [],
+  "adverb": [],
+  "scifi-creature": [],
+  "emotion": [],
+  "bug": [],
+  "mammal": [],
+  "adjective": [],
+  "fantasy-location": [],
+  "material": [],
+  "fantasy-item": [],
+  "fantasy-items": [],
+  "inanimate-object": [],
+  "clothing": [],
+  "accessory": [],
+  "reptile": []
 }
