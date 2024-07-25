@@ -1,3 +1,7 @@
 __pycache__/
 .env
 .key
+reddit.log
+pid_reddit.txt
+discord.log
+pid_discord.txt
