@@ -30,6 +30,8 @@ For a full list of keywords that can be used, you can pass "!prompt" without any
 - `!prompt`
 
 ## Change log
+### 2024-08-10
+- Replace clothing with any-clothing
 ### 2024-07-25
 - Add keywords: clothing, headwear, upper-torso-clothing, lower-torso-clothing, footwear
 ### 2024-06-21

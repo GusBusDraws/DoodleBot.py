@@ -487,7 +487,7 @@
     "bow tie",
     "suspenders"
   ],
-  "clothing" : [
+  "any-clothing" : [
     "headwear",
     "upper-torso-clothing",
     "lower-torso-clothing",
@@ -497,8 +497,8 @@
     "knight helmet",
     "spartan helmet",
     "clown wig",
-    "cowboy-hat",
-    "trucker-hat",
+    "cowboy hat",
+    "trucker hat",
     "ski cap",
     "ski mask",
     "sailor cap",
@@ -506,9 +506,9 @@
     "prince henry cap",
     "crown",
     "tiara",
-    "sou'wester-hat",
-    "sailor-hat",
-    "captain-hat",
+    "sou'wester hat",
+    "sailor hat",
+    "captain hat",
     "samurai helmet",
     "hardhat",
     "brodie helmet",
@@ -533,17 +533,14 @@
     "homburg hat",
     "deerstalker",
     "sallet helmet",
+    "kettle hat",
+    "adrian helmet",
+    "tyrolean hat",
     "ushanka"
   ],
 
   "upper-torso-clothing" : [
     "kimono",
-    "programmer-socks",
-    "kettle",
-    "hat",
-    "adrian-helmet",
-    "tyrolean-hat",
-    "lederhosen",
     "bath robe",
     "insulated vest",
     "fancy vest",
@@ -577,8 +574,8 @@
     "fur-coat",
     "blouse",
     "lantern sleeve blouse",
-    "plaid-flannel-shirt",
-    "plaid-flannel-shirt-with-the-sleeves-ripped-off"
+    "plaid flannel shirt",
+    "plaid flannel shirt with the sleeves ripped off"
   ],
 
   "lower-torso-clothing" : [
@@ -605,14 +602,15 @@
     "pantsuit",
     "cargo shorts",
     "cargo pants",
-    "gym-shorts",
-    "midi-dress",
-    "maxi-dress",
+    "gym shorts",
+    "midi dress",
+    "maxi dress",
     "cocktail-dress",
     "sundress",
-    "1920s-flapper-dress",
+    "1920s flapper dress",
     "floral-dress",
-    "ballgown"
+    "ballgown",
+    "lederhosen"
   ],
 
   "footwear" : [
@@ -642,6 +640,7 @@
     "clogs",
     "geta shoe",
     "knee-high socks",
+    "programmer socks",
     "foot wraps"
   ],
 
